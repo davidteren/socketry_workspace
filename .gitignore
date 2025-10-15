@@ -1,14 +1,20 @@
-# Ignore all cloned repository directories
+# Category directories with cloned repos
 [0-9][0-9]-*/
-99-*/
-
-# Ignore the unsorted directory
+99-miscellaneous/
 unsorted/
 
-# Ignore the tracking file (will be regenerated)
+# Gemfile.lock (optional, uncomment if you want to track it)
+# Gemfile.lock
+
+# Repo list cache
 .repo_list.json
 
-# Keep only the scripts and documentation
-!*.sh
-!*.md
-!.gitignore
+# Deprecated - remove after migration
+.repos_metadata.json
+*.sh
+scripts/
+
+# IDE
+.idea/
+.vscode/
+.qodo/

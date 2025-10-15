@@ -22,6 +22,189 @@ Socketry is a collection of modern, high-performance Ruby libraries focused on a
 - **12-low-level**: C extensions and system libraries
 - **13-utilities**: General utility libraries
 
+## Setup
+
+### Prerequisites
+
+```bash
+bundle install
+```
+
+### Initial Setup (First Time)
+
+Clone this repository and run the setup:
+
+```bash
+git clone <your-repo-url> socketry
+cd socketry
+bundle install
+./socketry.rb setup
+```
+
+This will:
+1. Clone all non-archived socketry repositories (only enabled ones)
+2. Organize them into categories
+3. Generate metadata with dependency information
+
+**Note:** The cloned repositories are not tracked by git (they're in .gitignore). Only the management scripts and documentation are version controlled.
+
+## Usage
+
+### Update Repositories
+
+```bash
+./socketry.rb update
+```
+
+The update command will:
+- Pull latest changes from all enabled repositories
+- Check for new repositories in the organization
+- Update metadata and remote timestamps
+- Skip any disabled repositories
+
+### Organize Repositories
+
+```bash
+# Preview organization changes
+./socketry.rb organize --dry-run
+
+# Apply organization changes
+./socketry.rb organize
+```
+
+### Managing Repositories
+
+You can selectively enable/disable repositories to control which ones are cloned and updated:
+
+```bash
+# Disable a repository (it won't be updated and can be removed)
+./socketry.rb disable flappy-bird
+
+# Enable a repository
+./socketry.rb enable flappy-bird
+
+# List all disabled repositories
+./socketry.rb list-disabled
+```
+
+**Example workflow for excluding repos:**
+```bash
+# Disable example/demo repos you don't need locally
+./socketry.rb disable falcon-benchmark
+./socketry.rb disable falcon-example-sinatra
+./socketry.rb disable async-websocket-pubsub-example
+
+# Remove them from disk if already cloned
+rm -rf 04-frameworks/falcon-benchmark
+rm -rf 04-frameworks/falcon-example-sinatra
+rm -rf 02-http-web/async-websocket-pubsub-example
+
+# Future updates will skip these repos
+./socketry.rb update
+```
+
+### Refresh Dependencies
+
+Update the dependency graph by scanning gemspec files:
+
+```bash
+./socketry.rb refresh-deps
+```
+
+This scans all gemspec files and updates the `dependencies` array in `.workspace_metadata.json` with intra-organization dependencies only.
+
+### View Statistics
+
+```bash
+./socketry.rb stats
+```
+
+### Regenerate Metadata
+
+```bash
+./socketry.rb metadata
+```
+
+## Metadata Structure
+
+The `.workspace_metadata.json` file contains:
+
+```json
+{
+  "generated_at": "2025-10-15T15:02:05+02:00",
+  "org": "socketry",
+  "categories": {
+    "01-async-core": { "count": 10 }
+  },
+  "repositories": {
+    "async": {
+      "category": "01-async-core",
+      "enabled": true,
+      "description": "The main 'brain' that lets Ruby do many things at once without waiting...",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-10-08T11:29:38Z",
+      "remote_updated_at": "2025-10-13T14:27:58Z",
+      "dependencies": ["console"]
+    }
+  }
+}
+```
+
+### Repository Fields
+
+- **enabled** (default: `true`): Set to `false` to exclude a repository from cloning and updates
+  - Disabled repos won't be cloned during setup
+  - Disabled repos are skipped during updates
+  - You can safely remove disabled repos from disk
+  - Useful for excluding example projects, archived code, or repos you don't need locally
+
+- **description**: Human-friendly explanation of what the library does
+  - Written in simple, accessible language
+  - Explains what it does, when to use it, and how it helps
+  - Automatically loaded from `descriptions.json`
+  - Edit `descriptions.json` to customize descriptions
+
+## Categorization Rules
+
+Repositories are categorized using patterns defined in `categories.json`. To change categorization:
+
+1. Edit `categories.json`
+2. Run `./socketry.rb organize --dry-run` to preview
+3. Run `./socketry.rb organize` to apply changes
+
+## Development
+
+### Running Tests
+
+```bash
+bundle exec rake test
+```
+
+### Project Structure
+
+```
+socketry/
+├── socketry.rb              # Main entry point
+├── Gemfile                  # Dependencies
+├── Rakefile                 # Test tasks
+├── lib/
+│   ├── socketry_manager.rb
+│   └── socketry_manager/
+│       ├── configuration.rb      # Config & settings
+│       ├── git_operations.rb     # Git commands
+│       ├── github_api.rb         # GitHub API client
+│       ├── categorizer.rb        # Repository categorization
+│       ├── metadata_manager.rb   # Metadata CRUD
+│       ├── updater.rb            # Update & clone logic
+│       └── cli.rb                # Command-line interface
+├── test/
+│   ├── test_helper.rb
+│   ├── configuration_test.rb
+│   ├── categorizer_test.rb
+│   └── metadata_manager_test.rb
+└── categories.json          # Category patterns
+```
+
 ## Common Dependencies
 
 Many socketry projects depend on these core libraries:
@@ -30,37 +213,6 @@ Many socketry projects depend on these core libraries:
 - **console**: Logging and debugging
 - **sus**: Testing framework
 - **bake**: Build and task automation
-
-## Usage
-
-### Initial Setup (First Time)
-
-Clone this repository and run the setup script:
-
-```bash
-git clone <your-repo-url> socketry
-cd socketry
-./setup_all.sh
-```
-
-This will:
-1. Clone all 143+ non-archived socketry repositories
-2. Organize them into 14 categories
-3. Create README files for each category
-
-**Note:** The cloned repositories are not tracked by git (they're in .gitignore). Only the setup scripts and documentation are version controlled.
-
-### Regular Updates
-
-```bash
-# Pull latest changes from all repositories
-./update.sh
-```
-
-The update script will:
-- Pull the latest changes from all repositories
-- Check for new repositories added to the organization
-- Display update statistics
 
 ## About Socketry
 
@@ -73,4 +225,4 @@ Socketry is maintained by Samuel Williams (@ioquatix) and provides a comprehensi
 
 ---
 
-*This directory structure was automatically generated and is regularly updated.*
+*This workspace is managed by a Ruby-based tool using Zeitwerk for autoloading and organized with object-oriented design.*
