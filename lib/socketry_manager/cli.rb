@@ -54,8 +54,12 @@ module SocketryManager
       puts "\nStep 1/4: Cloning repositories..."
       updater = Updater.new(@config)
       github_api = GithubApi.new(@config.org)
+      metadata_mgr = MetadataManager.new(@config)
+      metadata = metadata_mgr.load
+      disabled = (metadata['repositories'] || {}).select { |_, info| info['enabled'] == false }.keys
       repos = github_api.fetch_all_repos
-      updater.clone_missing(repos.map { |r| r[:name] })
+      enabled_repo_names = repos.map { |r| r[:name] }.reject { |name| disabled.include?(name) }
+      updater.clone_missing(enabled_repo_names)
 
       puts "\nStep 2/4: Organizing into categories..."
       organize
