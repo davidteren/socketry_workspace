@@ -4,7 +4,6 @@ module SocketryManager
   class MetadataManager
     def initialize(config)
       @config = config
-      @descriptions = load_descriptions
     end
 
     def load
@@ -13,12 +12,7 @@ module SocketryManager
       JSON.parse(File.read(@config.workspace_metadata_file))
     end
 
-    def load_descriptions
-      descriptions_file = File.join(@config.base_dir, 'descriptions.json')
-      return {} unless File.exist?(descriptions_file)
 
-      JSON.parse(File.read(descriptions_file))
-    end
 
     def save(data)
       File.write(@config.workspace_metadata_file, JSON.pretty_generate(data))
@@ -39,8 +33,7 @@ module SocketryManager
         repositories[repo[:name]]['category'] = repo[:category]
         repositories[repo[:name]]['enabled'] =
           repositories[repo[:name]]['enabled'].nil? || repositories[repo[:name]]['enabled']
-        repositories[repo[:name]]['description'] =
-          @descriptions[repo[:name]] || repositories[repo[:name]]['description'] || ''
+        repositories[repo[:name]]['description'] = repositories[repo[:name]]['description'] || ''
         repositories[repo[:name]]['dependencies'] ||= []
       end
 

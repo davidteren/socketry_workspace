@@ -166,8 +166,8 @@ The `.workspace_metadata.json` file contains:
 - **description**: Human-friendly explanation of what the library does
   - Written in simple, accessible language
   - Explains what it does, when to use it, and how it helps
-  - Automatically loaded from `descriptions.json`
-  - Edit `descriptions.json` to customize descriptions
+  - Lives in `.workspace_metadata.json` under repositories.<name>.description
+  - You can edit it directly in `.workspace_metadata.json`
 
 ## Categorization Rules
 
@@ -216,6 +216,10 @@ This repository intentionally keeps documentation minimal:
 - Usage and setup: this README
 - Category patterns: categories.json
 - Workspace metadata schema: .workspace_metadata.json (generated)
+
+Currently used JSON files:
+- categories.json (input)
+- .workspace_metadata.json (generated)
 
 For background on the tool and architecture, review the source under lib/ and run ./socketry.rb help.
 
