@@ -422,8 +422,8 @@
     async function loadData() {
         try {
             const [metadataResponse, categoriesResponse] = await Promise.all([
-                fetch('../.workspace_metadata.json'),
-                fetch('../categories.json')
+                fetch('https://raw.githubusercontent.com/davidteren/socketry_workspace/refs/heads/main/.workspace_metadata.json'),
+                fetch('https://raw.githubusercontent.com/davidteren/socketry_workspace/refs/heads/main/categories.json')
             ]);
 
             if (!metadataResponse.ok || !categoriesResponse.ok) {
