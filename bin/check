@@ -1,0 +1,48 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+# bin/check - Run all quality checks for the project
+#
+# This script runs linting and tests to ensure code quality.
+# It exits with a non-zero status if any check fails.
+
+require 'English'
+
+# rubocop:disable Naming/PredicateMethod
+def run_quality_check(name, command)
+  # rubocop:enable Naming/PredicateMethod
+  puts "\n#{'=' * 80}"
+  puts "Running #{name}..."
+  puts '=' * 80
+
+  system(command)
+
+  if $CHILD_STATUS.success?
+    puts "\n✓ #{name} passed"
+    true
+  else
+    puts "\n✗ #{name} failed"
+    false
+  end
+end
+
+# Track overall success
+all_passed = true
+
+# Run RuboCop
+all_passed &= run_quality_check('RuboCop', 'bundle exec rubocop')
+
+# Run tests
+all_passed &= run_quality_check('Tests', 'bundle exec rake test')
+
+# Final summary
+puts "\n#{'=' * 80}"
+if all_passed
+  puts '✓ All checks passed!'
+  puts '=' * 80
+  exit 0
+else
+  puts '✗ Some checks failed'
+  puts '=' * 80
+  exit 1
+end

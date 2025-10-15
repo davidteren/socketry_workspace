@@ -30,9 +30,13 @@ Layout/LineLength:
 
 Metrics/MethodLength:
   Max: 35
+  Exclude:
+    - 'test/**/*'
 
 Metrics/AbcSize:
   Max: 45
+  Exclude:
+    - 'test/**/*'
 
 Metrics/CyclomaticComplexity:
   Max: 12
