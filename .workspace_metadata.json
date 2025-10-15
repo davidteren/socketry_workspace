@@ -1,48 +1,12 @@
 {
-  "generated_at": "2025-10-15T16:00:25+02:00",
+  "generated_at": "2025-10-15T16:12:26+02:00",
   "org": "socketry",
   "categories": {
     "01-async-core": {
-      "count": 10
-    },
-    "02-http-web": {
-      "count": 20
-    },
-    "03-dns-network": {
-      "count": 2
+      "count": 1
     },
     "04-frameworks": {
-      "count": 22
-    },
-    "05-database": {
-      "count": 8
-    },
-    "06-protocols": {
-      "count": 2
-    },
-    "07-console": {
-      "count": 4
-    },
-    "08-testing": {
-      "count": 14
-    },
-    "09-io-libraries": {
-      "count": 6
-    },
-    "10-dev-tools": {
-      "count": 7
-    },
-    "11-security": {
-      "count": 3
-    },
-    "12-low-level": {
-      "count": 7
-    },
-    "13-utilities": {
-      "count": 17
-    },
-    "99-miscellaneous": {
-      "count": 20
+      "count": 1
     }
   },
   "repositories": {
