@@ -210,14 +210,14 @@ socketry/
 └── categories.json          # Category patterns
 ```
 
-## Common Dependencies
+## Docs
 
-Many socketry projects depend on these core libraries:
+This repository intentionally keeps documentation minimal:
+- Usage and setup: this README
+- Category patterns: categories.json
+- Workspace metadata schema: .workspace_metadata.json (generated)
 
-- **async**: The foundational async/await framework
-- **console**: Logging and debugging
-- **sus**: Testing framework
-- **bake**: Build and task automation
+For background on the tool and architecture, review the source under lib/ and run ./socketry.rb help.
 
 ## About Socketry
 

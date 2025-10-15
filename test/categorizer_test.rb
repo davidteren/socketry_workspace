@@ -80,4 +80,15 @@ class CategorizerTest < Minitest::Test
     assert Dir.exist?(File.join(@temp_dir, '02-http-web', 'async-http'))
     assert Dir.exist?(File.join(@temp_dir, '99-miscellaneous', 'unknown-repo'))
   end
+
+  def test_organize_moves_from_unsorted
+    # Place a repo into unsorted; categorizer should move it into proper category
+    create_unsorted_repo('async')
+
+    results = @categorizer.organize_repositories(dry_run: false)
+
+    assert_equal 1, results[:moved]
+    assert Dir.exist?(File.join(@temp_dir, '01-async-core', 'async'))
+    refute Dir.exist?(File.join(@temp_dir, 'unsorted', 'async'))
+  end
 end

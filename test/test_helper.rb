@@ -41,6 +41,13 @@ module TestHelpers
     repo_dir
   end
 
+  def create_unsorted_repo(name)
+    unsorted_dir = File.join(@temp_dir, 'unsorted')
+    repo_dir = File.join(unsorted_dir, name)
+    FileUtils.mkdir_p(File.join(repo_dir, '.git'))
+    repo_dir
+  end
+
   def create_mock_gemspec(repo_dir, name, dependencies = [])
     gemspec_content = <<~GEMSPEC
       Gem::Specification.new do |spec|

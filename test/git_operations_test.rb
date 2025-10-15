@@ -59,6 +59,16 @@ class GitOperationsTest < Minitest::Test
     assert_equal 0, repos.size
   end
 
+  def test_discovers_repos_in_unsorted_directory
+    create_unsorted_repo('async')
+
+    repos = @git_ops.find_all_repos
+
+    assert_equal 1, repos.size
+    assert_equal 'async', repos.first[:name]
+    assert_equal 'unsorted', repos.first[:category]
+  end
+
   def test_skips_directories_without_git
     category_dir = File.join(@temp_dir, '01-async-core')
     FileUtils.mkdir_p(category_dir)
