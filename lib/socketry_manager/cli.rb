@@ -11,7 +11,7 @@ module SocketryManager
 
       case command
       when 'setup'
-        setup_all
+        setup_all(yes: args.include?('--yes') || args.include?('-y'))
       when 'update'
         update
       when 'organize'
@@ -39,7 +39,7 @@ module SocketryManager
 
     private
 
-    def setup_all
+    def setup_all(yes: false)
       puts '=' * 50
       puts 'Socketry Repository Collection Setup'
       puts '=' * 50
@@ -47,9 +47,11 @@ module SocketryManager
       puts 'This will clone all non-archived socketry repositories'
       puts 'and organize them into categories.'
       puts ''
-      print 'Continue? (y/n) '
-
-      return unless gets.chomp.downcase == 'y'
+      unless yes
+        print 'Continue? (y/n) '
+        response = $stdin.gets
+        return unless response && response.chomp.downcase == 'y'
+      end
 
       puts "\nStep 1/4: Cloning repositories..."
       updater = Updater.new(@config)
@@ -211,6 +213,7 @@ module SocketryManager
 
         Commands:
           setup              Clone and organize all repositories (only enabled ones)
+                             --yes: proceed without confirmation
           update             Update all enabled repositories and check for new ones
           organize           Organize repositories into categories
                              --dry-run: preview changes without moving
