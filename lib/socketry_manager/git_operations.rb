@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module SocketryManager
   class GitOperations
     def initialize(config)
@@ -23,13 +25,11 @@ module SocketryManager
 
         # Fetch and check if update needed
         Open3.capture3('git', 'fetch', 'origin', '--quiet')
-        
+
         local, = Open3.capture3('git', 'rev-parse', '@')
         remote, = Open3.capture3('git', 'rev-parse', '@{u}')
 
-        if local.strip == remote.strip
-          return :up_to_date
-        end
+        return :up_to_date if local.strip == remote.strip
 
         _, _, status = Open3.capture3('git', 'pull', '--quiet')
         status.success? ? :updated : :failed
@@ -43,6 +43,7 @@ module SocketryManager
       category_dirs.each do |category_dir|
         Dir.glob(File.join(category_dir, '*')).each do |repo_dir|
           next unless Dir.exist?(File.join(repo_dir, '.git'))
+
           repos << {
             name: File.basename(repo_dir),
             path: repo_dir,

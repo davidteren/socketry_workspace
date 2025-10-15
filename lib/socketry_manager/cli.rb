@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module SocketryManager
   class CLI
     def initialize(config)
@@ -46,7 +48,7 @@ module SocketryManager
       puts 'and organize them into categories.'
       puts ''
       print 'Continue? (y/n) '
-      
+
       return unless gets.chomp.downcase == 'y'
 
       puts "\nStep 1/4: Cloning repositories..."
@@ -76,20 +78,20 @@ module SocketryManager
       puts ''
 
       updater = Updater.new(@config)
-      
+
       puts 'Updating existing repositories...'
       results = updater.update_all
-      
+
       puts "\nUpdate Summary:"
       puts "  - Updated: #{results[:updated]}"
       puts "  - Up-to-date: #{results[:up_to_date]}"
       puts "  - Failed: #{results[:failed]}"
-      puts "  - No upstream: #{results[:no_upstream]}" if results[:no_upstream] > 0
-      puts "  - Disabled (skipped): #{results[:skipped]}" if results[:skipped] > 0
+      puts "  - No upstream: #{results[:no_upstream]}" if results[:no_upstream].positive?
+      puts "  - Disabled (skipped): #{results[:skipped]}" if results[:skipped].positive?
 
       puts "\nChecking for new repositories..."
       new_repos = updater.check_new_repos
-      
+
       if new_repos.empty?
         puts '  No new repositories found.'
       else
@@ -120,10 +122,10 @@ module SocketryManager
 
     def refresh_dependencies
       puts 'Refreshing intra-org dependencies...'
-      
+
       metadata_mgr = MetadataManager.new(@config)
       metadata_mgr.refresh_dependencies
-      
+
       puts '✓ Refreshed dependencies in .workspace_metadata.json'
     end
 
@@ -181,7 +183,7 @@ module SocketryManager
     def list_disabled
       metadata_mgr = MetadataManager.new(@config)
       metadata = metadata_mgr.load
-      
+
       disabled = []
       metadata['repositories']&.each do |name, info|
         disabled << name if info['enabled'] == false
@@ -200,9 +202,9 @@ module SocketryManager
     def show_help
       puts <<~HELP
         Socketry Repository Manager
-        
+
         Usage: ruby socketry.rb <command> [options]
-        
+
         Commands:
           setup              Clone and organize all repositories (only enabled ones)
           update             Update all enabled repositories and check for new ones
@@ -215,15 +217,15 @@ module SocketryManager
           enable <name>      Enable a repository (include in updates)
           list-disabled      List all disabled repositories
           help               Show this help message
-        
+
         Repository Management:
           Repositories have an 'enabled' flag (default: true) in .workspace_metadata.json
           Disabled repos are skipped during updates and can be safely removed locally
-        
+
         Environment Variables:
           GITHUB_TOKEN       GitHub API token for higher rate limits
           GH_TOKEN           Alternative GitHub token variable
-        
+
         Examples:
           ruby socketry.rb setup
           ruby socketry.rb update

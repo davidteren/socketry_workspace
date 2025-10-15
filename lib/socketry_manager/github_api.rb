@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'net/http'
 require 'uri'
 
@@ -5,7 +7,7 @@ module SocketryManager
   class GithubApi
     def initialize(org, token: nil)
       @org = org
-      @token = token || ENV['GITHUB_TOKEN'] || ENV['GH_TOKEN']
+      @token = token || ENV['GITHUB_TOKEN'] || ENV.fetch('GH_TOKEN', nil)
     end
 
     def fetch_all_repos
@@ -45,8 +47,9 @@ module SocketryManager
       end
 
       return [] unless response.is_a?(Net::HTTPSuccess)
+
       JSON.parse(response.body)
-    rescue => e
+    rescue StandardError => e
       warn "Error fetching GitHub API: #{e.message}"
       []
     end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module SocketryManager
   class Configuration
     attr_accessor :base_dir, :org, :categories_file, :workspace_metadata_file
@@ -17,6 +19,7 @@ module SocketryManager
 
     def load_categories
       return {} unless File.exist?(categories_file)
+
       JSON.parse(File.read(categories_file))
     end
   end

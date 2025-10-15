@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module SocketryManager
   class Updater
     def initialize(config)
@@ -14,21 +16,21 @@ module SocketryManager
 
       repos.each do |repo|
         print "Updating #{repo[:name]}... "
-        
+
         status = @git_ops.update_repository(repo[:path])
-        
+
         case status
         when :updated
-          puts "✓ updated"
+          puts '✓ updated'
           results[:updated] += 1
         when :up_to_date
-          puts "✓ up-to-date"
+          puts '✓ up-to-date'
           results[:up_to_date] += 1
         when :failed
-          puts "✗ failed"
+          puts '✗ failed'
           results[:failed] += 1
         when :no_upstream
-          puts "⚠ no upstream"
+          puts '⚠ no upstream'
           results[:no_upstream] += 1
         end
 
@@ -54,7 +56,7 @@ module SocketryManager
           metadata['repositories'] ||= {}
           metadata['repositories'][repo[:name]] = { 'enabled' => true }
         end
-        
+
         @metadata.update_repo_timestamps(
           repo[:name],
           remote_pushed_at: repo[:pushed_at],
@@ -63,13 +65,13 @@ module SocketryManager
       end
 
       new_repos = current_repos.reject { |r| cloned_repos.include?(r[:name]) }
-      
+
       # Filter out disabled repos from new repos list
-      enabled_new_repos = new_repos.select do |repo|
+      enabled_new_repos = new_repos.reject do |repo|
         metadata = @metadata.load
-        metadata.dig('repositories', repo[:name], 'enabled') != false
+        metadata.dig('repositories', repo[:name], 'enabled') == false
       end
-      
+
       enabled_new_repos.map { |r| r[:name] }
     end
 
@@ -89,13 +91,13 @@ module SocketryManager
 
         case status
         when :cloned
-          puts "✓ cloned"
+          puts '✓ cloned'
           results[:cloned] += 1
         when :skipped
-          puts "⚠ already exists"
+          puts '⚠ already exists'
           results[:skipped] += 1
         when :failed
-          puts "✗ failed"
+          puts '✗ failed'
           results[:failed] += 1
         end
       end

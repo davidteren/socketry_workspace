@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module SocketryManager
   class Categorizer
     def initialize(config)
@@ -34,7 +36,7 @@ module SocketryManager
             FileUtils.mv(repo[:path], File.join(target_dir, repo[:name]))
             puts "Moved #{repo[:name]} -> #{target_category}/"
             results[:moved] += 1
-          rescue => e
+          rescue StandardError => e
             results[:errors] << "Failed to move #{repo[:name]}: #{e.message}"
           end
         end

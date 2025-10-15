@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'minitest/autorun'
 require 'minitest/pride'
 require 'zeitwerk'
@@ -13,7 +15,7 @@ module TestHelpers
   def setup_temp_workspace
     @temp_dir = Dir.mktmpdir('socketry_test')
     @config = SocketryManager::Configuration.new(@temp_dir)
-    
+
     # Create categories.json
     categories = {
       '01-async-core' => ['^async$', '^async-(actor|bus)$'],
@@ -21,7 +23,7 @@ module TestHelpers
       '99-miscellaneous' => []
     }
     File.write(@config.categories_file, JSON.pretty_generate(categories))
-    
+
     @config
   end
 
@@ -32,10 +34,10 @@ module TestHelpers
   def create_mock_repo(name, category)
     category_dir = File.join(@temp_dir, category)
     FileUtils.mkdir_p(category_dir)
-    
+
     repo_dir = File.join(category_dir, name)
     FileUtils.mkdir_p(File.join(repo_dir, '.git'))
-    
+
     repo_dir
   end
 
@@ -47,7 +49,7 @@ module TestHelpers
         #{dependencies.map { |dep| "spec.add_dependency '#{dep}'" }.join("\n  ")}
       end
     GEMSPEC
-    
+
     File.write(File.join(repo_dir, "#{name}.gemspec"), gemspec_content)
   end
 end

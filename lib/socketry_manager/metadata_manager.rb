@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module SocketryManager
   class MetadataManager
     def initialize(config)
@@ -7,12 +9,14 @@ module SocketryManager
 
     def load
       return {} unless File.exist?(@config.workspace_metadata_file)
+
       JSON.parse(File.read(@config.workspace_metadata_file))
     end
 
     def load_descriptions
       descriptions_file = File.join(@config.base_dir, 'descriptions.json')
       return {} unless File.exist?(descriptions_file)
+
       JSON.parse(File.read(descriptions_file))
     end
 
@@ -30,11 +34,13 @@ module SocketryManager
 
       repos.each do |repo|
         categories[repo[:category]]['count'] += 1
-        
+
         repositories[repo[:name]] ||= {}
         repositories[repo[:name]]['category'] = repo[:category]
-        repositories[repo[:name]]['enabled'] = repositories[repo[:name]]['enabled'].nil? ? true : repositories[repo[:name]]['enabled']
-        repositories[repo[:name]]['description'] = @descriptions[repo[:name]] || repositories[repo[:name]]['description'] || ''
+        repositories[repo[:name]]['enabled'] =
+          repositories[repo[:name]]['enabled'].nil? || repositories[repo[:name]]['enabled']
+        repositories[repo[:name]]['description'] =
+          @descriptions[repo[:name]] || repositories[repo[:name]]['description'] || ''
         repositories[repo[:name]]['dependencies'] ||= []
       end
 
@@ -53,7 +59,7 @@ module SocketryManager
       git_ops = GitOperations.new(@config)
       all_repos = git_ops.find_all_repos
       metadata = load
-      
+
       all_repos.select do |repo|
         repo_metadata = metadata.dig('repositories', repo[:name])
         repo_metadata.nil? || repo_metadata['enabled'] != false
@@ -80,7 +86,7 @@ module SocketryManager
       metadata = load
       metadata['repositories'] ||= {}
       metadata['repositories'][repo_name] ||= {}
-      
+
       metadata['repositories'][repo_name]['last_pull_at'] = last_pull_at if last_pull_at
       metadata['repositories'][repo_name]['remote_pushed_at'] = remote_pushed_at if remote_pushed_at
       metadata['repositories'][repo_name]['remote_updated_at'] = remote_updated_at if remote_updated_at
@@ -91,10 +97,10 @@ module SocketryManager
     def refresh_dependencies
       git_ops = GitOperations.new(@config)
       repos = git_ops.find_all_repos
-      
+
       # Build list of all gem names
       all_gems = repos.map { |r| r[:name] }
-      
+
       metadata = load
       metadata['repositories'] ||= {}
 
@@ -109,7 +115,7 @@ module SocketryManager
 
       metadata['generated_at'] = DateTime.now.iso8601
       save(metadata)
-      
+
       metadata
     end
 
