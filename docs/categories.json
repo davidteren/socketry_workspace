@@ -1,0 +1,96 @@
+{
+  "01-async-core": [
+    "^async$",
+    "^async-container$",
+    "^async-(actor|bus|cron|debug|limiter|process|service|worker)$"
+  ],
+  "02-http-web": [
+    "^async-http",
+    "^async-websocket",
+    "^async-rest$",
+    "^protocol-http(1|2)?$",
+    "^protocol-websocket$",
+    "^protocol-hpack$",
+    "^protocol-multipart$",
+    "^protocol-quic$",
+    "^protocol-rack$",
+    "^http-accept$",
+    "^rack$",
+    "^rack-conform$",
+    "websocket"
+  ],
+  "03-dns-network": [
+    "^async-dns$",
+    "^rubydns$"
+  ],
+  "04-frameworks": [
+    "^falcon",
+    "^utopia",
+    "^xrb$",
+    "^xrb-formatters$",
+    "^xrb-(rails|sanitize)$",
+    "^falcon-limiter$",
+    "^live(-js|-audio-js)?$",
+    "^lively(-electron)?$"
+  ],
+  "05-database": [
+    "^db($|-)",
+    "^async-sequel$",
+    "^async-pool$",
+    "^db-(migrate|model)$"
+  ],
+  "06-protocols": [
+    "^protocol-redis$",
+    "^async-redis$"
+  ],
+  "07-console": [
+    "^console$",
+    "^console-"
+  ],
+  "08-testing": [
+    "^sus($|-)",
+    "^covered$",
+    "^benchmark-http$",
+    "^bake-test-types$",
+    "^async-rspec$",
+    "^sus-fixtures-"
+  ],
+  "09-io-libraries": [
+    "^io-",
+    "^localhost$"
+  ],
+  "10-dev-tools": [
+    "^rspec-",
+    "^rubocop-socketry$",
+    "^performance$",
+    "^xrb-vscode$",
+    "^katacoda$",
+    "^decode$"
+  ],
+  "11-security": [
+    "^cloudflare",
+    "^variant$"
+  ],
+  "12-low-level": [
+    "^nio4r$",
+    "^cool\\.io$",
+    "^timers$",
+    "^fiber-(local|profiler)$",
+    "^thread-local$",
+    "^lightio$"
+  ],
+  "13-utilities": [
+    "^metrics",
+    "^traces",
+    "^process-",
+    "^string-format$",
+    "^qrcode$",
+    "^types$",
+    "^data$",
+    "^memory($|-)",
+    "^logos$",
+    "^community$",
+    "^multipart-post$"
+  ],
+  "99-miscellaneous": []
+}

@@ -1,0 +1,1623 @@
+{
+  "generated_at": "2025-10-15T17:13:45+02:00",
+  "org": "socketry",
+  "categories": {
+    "01-async-core": {
+      "count": 10
+    },
+    "02-http-web": {
+      "count": 20
+    },
+    "03-dns-network": {
+      "count": 2
+    },
+    "04-frameworks": {
+      "count": 22
+    },
+    "05-database": {
+      "count": 8
+    },
+    "06-protocols": {
+      "count": 2
+    },
+    "07-console": {
+      "count": 4
+    },
+    "08-testing": {
+      "count": 14
+    },
+    "09-io-libraries": {
+      "count": 6
+    },
+    "10-dev-tools": {
+      "count": 7
+    },
+    "11-security": {
+      "count": 3
+    },
+    "12-low-level": {
+      "count": 7
+    },
+    "13-utilities": {
+      "count": 17
+    },
+    "99-miscellaneous": {
+      "count": 20
+    }
+  },
+  "repositories": {
+    "async": {
+      "category": "01-async-core",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-10-08T11:29:38Z",
+      "remote_updated_at": "2025-10-13T14:27:58Z",
+      "dependencies": [
+        "console",
+        "io-event",
+        "metrics",
+        "traces"
+      ],
+      "enabled": true,
+      "description": "The main 'brain' that lets Ruby do many things at once without waiting. Like having multiple hands to juggle balls - you can catch and throw multiple balls at the same time! Use this when you want your program to handle lots of tasks simultaneously, like downloading files while also responding to user clicks."
+    },
+    "async-actor": {
+      "category": "01-async-core",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-09-29T03:49:01Z",
+      "remote_updated_at": "2025-09-29T03:49:03Z",
+      "dependencies": [
+        "async"
+      ],
+      "enabled": true,
+      "description": "Creates little 'workers' (actors) that each do their own job independently. Imagine having robot helpers where each robot has one specific job and they all work at the same time. Great for building systems where different parts need to work separately but communicate with messages."
+    },
+    "async-bus": {
+      "category": "01-async-core",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-02-21T01:49:04Z",
+      "remote_updated_at": "2025-02-21T01:49:07Z",
+      "dependencies": [
+        "async",
+        "io-endpoint",
+        "io-stream"
+      ],
+      "enabled": true,
+      "description": "A 'message bus' that lets different parts of your program talk to each other. Like a school bus route where everyone can get on and off at different stops. Use this when different parts of your app need to send announcements to each other."
+    },
+    "async-container": {
+      "category": "01-async-core",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-10-15T08:05:19Z",
+      "remote_updated_at": "2025-10-15T08:05:22Z",
+      "dependencies": [
+        "async"
+      ],
+      "enabled": true,
+      "description": "Manages and organizes groups of async tasks, like a container that holds multiple running processes. Think of it as a lunchbox that keeps all your different foods organized. Use this to group related tasks together and manage them as a unit."
+    },
+    "async-cron": {
+      "category": "01-async-core",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2024-06-08T16:13:11Z",
+      "remote_updated_at": "2025-10-07T04:17:12Z",
+      "dependencies": [
+        "async",
+        "async-service"
+      ],
+      "enabled": true,
+      "description": "Schedules tasks to run at specific times, like an alarm clock for your code. Want something to happen every hour or every day? This is your friend! Perfect for automated backups, sending daily emails, or cleaning up old files."
+    },
+    "async-debug": {
+      "category": "01-async-core",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2024-07-14T13:49:50Z",
+      "remote_updated_at": "2025-06-04T04:05:50Z",
+      "dependencies": [
+        "async-http",
+        "lively"
+      ],
+      "enabled": true,
+      "description": "Helps you see what's happening inside your async code when things go wrong. Like x-ray vision for your program! Use this when your async code isn't working and you need to figure out why."
+    },
+    "async-limiter": {
+      "category": "01-async-core",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-09-17T22:22:12Z",
+      "remote_updated_at": "2025-09-17T22:22:15Z",
+      "dependencies": [
+        "async"
+      ],
+      "enabled": true,
+      "description": "Controls how many things can happen at once, like a bouncer at a club. If you're downloading 1000 files, this makes sure you only download 10 at a time so you don't overwhelm your computer. Essential for rate-limiting and preventing overload."
+    },
+    "async-process": {
+      "category": "01-async-core",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2024-11-08T04:43:36Z",
+      "remote_updated_at": "2025-01-03T23:38:48Z",
+      "dependencies": [
+        "async"
+      ],
+      "enabled": true,
+      "description": "Runs other programs from within your Ruby code asynchronously. Like being able to press multiple 'Start' buttons at once for different apps. Use when you need to run command-line tools or external programs without freezing your app."
+    },
+    "async-service": {
+      "category": "01-async-core",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-08-31T22:59:34Z",
+      "remote_updated_at": "2025-09-02T19:51:01Z",
+      "dependencies": [
+        "async",
+        "async-container",
+        "string-format"
+      ],
+      "enabled": true,
+      "description": "Helps you create long-running background services. Like having a robot that never stops working in the background. Perfect for building web servers, background workers, or any service that needs to run continuously."
+    },
+    "async-worker": {
+      "category": "01-async-core",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2020-02-29T11:18:51Z",
+      "remote_updated_at": "2021-11-03T21:35:34Z",
+      "dependencies": [
+        "async",
+        "async-rspec",
+        "covered"
+      ],
+      "enabled": true,
+      "description": "Creates worker threads that process jobs from a queue. Imagine a factory assembly line where workers pick up tasks from a conveyor belt. Use this for job queues and background task processing."
+    },
+    "async-http": {
+      "category": "02-http-web",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-10-02T02:33:43Z",
+      "remote_updated_at": "2025-10-02T02:33:46Z",
+      "dependencies": [
+        "async",
+        "async-pool",
+        "io-endpoint",
+        "io-stream",
+        "metrics",
+        "protocol-http",
+        "protocol-http1",
+        "protocol-http2",
+        "traces"
+      ],
+      "enabled": true,
+      "description": "Makes HTTP requests (talking to websites) without waiting around. Like sending multiple letters at once and getting all the replies back when they're ready. Perfect for building web scrapers, API clients, or anything that needs to talk to many websites quickly."
+    },
+    "async-http-cache": {
+      "category": "02-http-web",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-10-03T23:16:44Z",
+      "remote_updated_at": "2025-10-03T23:16:47Z",
+      "dependencies": [
+        "async-http"
+      ],
+      "enabled": true,
+      "description": "Remembers website responses so you don't have to ask again. Like keeping a photocopy of a book page instead of going back to the library. Speeds up apps that make the same requests repeatedly."
+    },
+    "async-http-capture": {
+      "category": "02-http-web",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-08-21T08:44:39Z",
+      "remote_updated_at": "2025-08-21T08:44:40Z",
+      "dependencies": [
+        "async-http",
+        "protocol-http"
+      ],
+      "enabled": true,
+      "description": "Records HTTP requests and responses for testing. Like having a video camera recording all the conversations between your app and websites. Great for debugging and testing web interactions."
+    },
+    "async-http-faraday": {
+      "category": "02-http-web",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-08-06T23:22:27Z",
+      "remote_updated_at": "2025-10-08T17:38:28Z",
+      "dependencies": [
+        "async-http"
+      ],
+      "enabled": true,
+      "description": "Faraday adapter for async-http. Use Faraday with async speed."
+    },
+    "async-http-full-duplex-streaming": {
+      "category": "02-http-web",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2022-06-17T06:07:33Z",
+      "remote_updated_at": "2022-06-17T03:07:51Z",
+      "enabled": true,
+      "description": "HTTP streaming example. Shows simultaneous upload/download.",
+      "dependencies": []
+    },
+    "async-rest": {
+      "category": "02-http-web",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-06-16T03:49:26Z",
+      "remote_updated_at": "2025-08-17T20:16:49Z",
+      "dependencies": [
+        "async-http",
+        "protocol-http"
+      ],
+      "enabled": true,
+      "description": "Makes working with REST APIs easier. REST is how most websites let programs talk to them. This is like having a translator who knows exactly how to ask websites for information. Perfect for building API clients."
+    },
+    "async-websocket": {
+      "category": "02-http-web",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2024-10-09T00:26:05Z",
+      "remote_updated_at": "2025-09-17T21:05:39Z",
+      "dependencies": [
+        "async-http",
+        "protocol-http",
+        "protocol-rack",
+        "protocol-websocket"
+      ],
+      "enabled": true,
+      "description": "Handles WebSocket connections - like a phone line that stays open for real-time chat. Unlike regular HTTP (which is like sending letters), WebSockets keep the conversation going. Use for chat apps, live updates, or real-time notifications."
+    },
+    "async-websocket-pubsub-example": {
+      "category": "02-http-web",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-01-15T00:06:56Z",
+      "remote_updated_at": "2025-01-15T00:06:59Z",
+      "enabled": true,
+      "description": "WebSocket pub/sub example. Shows real-time messaging patterns.",
+      "dependencies": []
+    },
+    "http-accept": {
+      "category": "02-http-web",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-03-09T10:37:05Z",
+      "remote_updated_at": "2025-10-03T16:01:53Z",
+      "dependencies": [],
+      "enabled": true,
+      "description": "Figures out what format the browser or client wants (HTML, JSON, etc.). Like a waiter understanding whether you want food, drinks, or dessert. Essential for building APIs that respond in different formats."
+    },
+    "protocol-hpack": {
+      "category": "02-http-web",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2024-09-13T04:07:06Z",
+      "remote_updated_at": "2025-08-17T20:16:58Z",
+      "dependencies": [],
+      "enabled": true,
+      "description": "Compresses HTTP/2 headers to save bandwidth. Like zipping up your HTTP headers into a smaller package. Automatically used by HTTP/2 servers to make things faster."
+    },
+    "protocol-http": {
+      "category": "02-http-web",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-10-04T02:22:20Z",
+      "remote_updated_at": "2025-10-13T11:57:53Z",
+      "dependencies": [],
+      "enabled": true,
+      "description": "The foundation for understanding HTTP messages. Like knowing the grammar rules of how websites talk. Other HTTP libraries build on top of this."
+    },
+    "protocol-http1": {
+      "category": "02-http-web",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-10-03T00:54:21Z",
+      "remote_updated_at": "2025-10-11T09:26:02Z",
+      "dependencies": [
+        "protocol-http"
+      ],
+      "enabled": true,
+      "description": "Handles HTTP/1.1 protocol. This is the 'classic' version of HTTP that most websites still use. Like the original recipe before HTTP/2 came along."
+    },
+    "protocol-http2": {
+      "category": "02-http-web",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-09-20T02:37:40Z",
+      "remote_updated_at": "2025-09-20T02:37:44Z",
+      "dependencies": [
+        "protocol-hpack",
+        "protocol-http"
+      ],
+      "enabled": true,
+      "description": "Handles HTTP/2 protocol - the newer, faster version of HTTP. Like HTTP/1 but with superpowers: multiple requests at once, better compression. Use for modern high-performance web servers."
+    },
+    "protocol-multipart": {
+      "category": "02-http-web",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-06-21T07:39:30Z",
+      "remote_updated_at": "2025-06-21T07:39:32Z",
+      "dependencies": [
+        "io-stream"
+      ],
+      "enabled": true,
+      "description": "Handles file uploads and form data with multiple parts. When you upload a picture along with text on a website, this handles it. Essential for any app that needs file uploads."
+    },
+    "protocol-quic": {
+      "category": "02-http-web",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2023-04-28T20:16:59Z",
+      "remote_updated_at": "2025-09-10T00:42:52Z",
+      "dependencies": [
+        "sus"
+      ],
+      "enabled": true,
+      "description": "Implements QUIC protocol - an even newer, faster networking protocol. Like HTTP/3's foundation, built for speed and reliability. Experimental but cutting-edge."
+    },
+    "protocol-rack": {
+      "category": "02-http-web",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-08-02T05:44:25Z",
+      "remote_updated_at": "2025-08-02T05:44:27Z",
+      "dependencies": [
+        "io-stream",
+        "protocol-http",
+        "rack"
+      ],
+      "enabled": true,
+      "description": "Connects Rack applications (like Rails) to async servers. Rack is Ruby's standard web server interface. This lets existing Ruby web apps run on async servers."
+    },
+    "protocol-websocket": {
+      "category": "02-http-web",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-04-12T11:23:09Z",
+      "remote_updated_at": "2025-06-19T19:36:45Z",
+      "dependencies": [
+        "protocol-http"
+      ],
+      "enabled": true,
+      "description": "The low-level WebSocket protocol implementation. Like the engine that powers async-websocket. You probably want async-websocket unless you're building something custom."
+    },
+    "rack": {
+      "category": "02-http-web",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-07-30T04:58:14Z",
+      "remote_updated_at": "2025-07-28T07:08:02Z",
+      "dependencies": [],
+      "enabled": true,
+      "description": "Socketry's fork of Rack - the standard Ruby web server interface. Like an adapter that lets any Ruby web framework work with any web server."
+    },
+    "rack-conform": {
+      "category": "02-http-web",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-08-08T15:52:51Z",
+      "remote_updated_at": "2025-08-08T15:52:55Z",
+      "dependencies": [
+        "async-http",
+        "async-websocket",
+        "benchmark-http",
+        "rack",
+        "sus",
+        "sus-fixtures-async"
+      ],
+      "enabled": true,
+      "description": "Validates and normalizes Rack requests. Like a spell-checker for web requests. Ensures requests follow the rules before your app processes them."
+    },
+    "roda-websockets": {
+      "category": "02-http-web",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2024-05-10T23:20:07Z",
+      "remote_updated_at": "2025-04-22T12:23:38Z",
+      "dependencies": [
+        "async-websocket",
+        "falcon"
+      ],
+      "enabled": true,
+      "description": "WebSocket support for Roda framework. Add real-time features to Roda apps."
+    },
+    "async-dns": {
+      "category": "03-dns-network",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-06-16T03:33:19Z",
+      "remote_updated_at": "2025-10-04T14:02:57Z",
+      "dependencies": [
+        "async",
+        "io-endpoint"
+      ],
+      "enabled": true,
+      "description": "DNS lookups without blocking. DNS turns website names (google.com) into numbers (IP addresses). This does it fast and asynchronously. Use when you need to look up many domain names."
+    },
+    "rubydns": {
+      "category": "03-dns-network",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-02-16T02:36:38Z",
+      "remote_updated_at": "2025-09-10T15:48:48Z",
+      "dependencies": [
+        "async-dns"
+      ],
+      "enabled": true,
+      "description": "A DNS server you can run in Ruby. Like running your own phone book for the internet. Build custom DNS servers for testing, development, or special routing needs."
+    },
+    "falcon": {
+      "category": "04-frameworks",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-10-15T04:57:16Z",
+      "remote_updated_at": "2025-10-15T11:06:57Z",
+      "dependencies": [
+        "async",
+        "async-container",
+        "async-container-supervisor",
+        "async-http",
+        "async-http-cache",
+        "async-service",
+        "localhost",
+        "protocol-http",
+        "protocol-rack"
+      ],
+      "enabled": true,
+      "description": "A super-fast web server for Ruby apps. Like Puma or Unicorn but uses async for speed. This is what you'd use to run a Rails or Sinatra app in production with maximum performance."
+    },
+    "falcon-benchmark": {
+      "category": "04-frameworks",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-04-09T23:59:08Z",
+      "remote_updated_at": "2025-04-27T12:34:12Z",
+      "enabled": false,
+      "description": "Performance benchmarks for Falcon server. Measures how fast Falcon is. Used for optimization work.",
+      "dependencies": []
+    },
+    "falcon-capybara": {
+      "category": "04-frameworks",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-07-27T10:39:24Z",
+      "remote_updated_at": "2025-07-27T10:39:29Z",
+      "dependencies": [
+        "falcon"
+      ],
+      "enabled": true,
+      "description": "Lets Capybara (testing tool) work with Falcon server. Like a bridge between your tests and your async server. Use when testing apps that run on Falcon."
+    },
+    "falcon-example-sinatra": {
+      "category": "04-frameworks",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2023-07-11T13:14:56Z",
+      "remote_updated_at": "2025-03-19T02:36:00Z",
+      "enabled": true,
+      "description": "Example of running Sinatra on Falcon. Shows how to use Falcon with Sinatra apps.",
+      "dependencies": []
+    },
+    "falcon-examples": {
+      "category": "04-frameworks",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-06-21T07:47:23Z",
+      "remote_updated_at": "2025-06-21T07:47:26Z",
+      "enabled": true,
+      "description": "Collection of Falcon examples. Learning resource for Falcon features.",
+      "dependencies": []
+    },
+    "falcon-limiter": {
+      "category": "04-frameworks",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-09-21T12:31:56Z",
+      "remote_updated_at": "2025-10-10T13:25:58Z",
+      "dependencies": [
+        "async-limiter"
+      ],
+      "enabled": true,
+      "description": "Rate limiting for Falcon web servers. Prevents people from hammering your server with too many requests. Like a bouncer for your API."
+    },
+    "falcon-my_api": {
+      "category": "04-frameworks",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2023-08-27T06:04:44Z",
+      "remote_updated_at": "2023-09-09T13:14:14Z",
+      "enabled": true,
+      "description": "API template project for Falcon. Quick-start for building APIs.",
+      "dependencies": []
+    },
+    "falcon-rails": {
+      "category": "04-frameworks",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-09-21T21:23:49Z",
+      "remote_updated_at": "2025-09-28T12:39:18Z",
+      "dependencies": [
+        "async-cable",
+        "async-job-adapter-active_job",
+        "async-websocket",
+        "console-adapter-rails",
+        "falcon",
+        "falcon-limiter",
+        "live"
+      ],
+      "enabled": true,
+      "description": "Connects Ruby on Rails with Falcon server. Makes Rails apps run on the super-fast Falcon server. Use this for high-performance Rails deployments."
+    },
+    "falcon-rails-examples": {
+      "category": "04-frameworks",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-09-27T04:09:53Z",
+      "remote_updated_at": "2025-10-09T16:32:19Z",
+      "enabled": true,
+      "description": "Examples of Rails apps on Falcon. Shows Rails + Falcon integration.",
+      "dependencies": []
+    },
+    "falcon-virtual-docker-example": {
+      "category": "04-frameworks",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-02-04T03:30:57Z",
+      "remote_updated_at": "2025-02-04T03:31:00Z",
+      "enabled": true,
+      "description": "Docker setup for Falcon. Shows how to containerize Falcon apps.",
+      "dependencies": []
+    },
+    "live": {
+      "category": "04-frameworks",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-09-16T07:53:25Z",
+      "remote_updated_at": "2025-10-06T08:49:01Z",
+      "dependencies": [
+        "async-websocket",
+        "protocol-websocket",
+        "xrb"
+      ],
+      "enabled": true,
+      "description": "Real-time reactive views for web apps. Changes on the server instantly appear in the browser without refreshing. Like magic - the page updates itself! Perfect for dashboards and collaborative apps."
+    },
+    "live-audio-js": {
+      "category": "04-frameworks",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-09-26T00:33:12Z",
+      "remote_updated_at": "2025-09-26T00:33:15Z",
+      "enabled": true,
+      "description": "JavaScript client for Live audio streaming. Real-time audio in browsers.",
+      "dependencies": []
+    },
+    "live-js": {
+      "category": "04-frameworks",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-09-26T00:33:16Z",
+      "remote_updated_at": "2025-09-26T00:33:19Z",
+      "enabled": true,
+      "description": "JavaScript client for Live framework. Browser-side code for real-time updates.",
+      "dependencies": []
+    },
+    "lively": {
+      "category": "04-frameworks",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-09-23T12:11:25Z",
+      "remote_updated_at": "2025-10-08T03:50:36Z",
+      "dependencies": [
+        "falcon",
+        "io-watch",
+        "live",
+        "xrb"
+      ],
+      "enabled": true,
+      "description": "Desktop app framework using web technologies. Build desktop apps with HTML/CSS/JavaScript but they run as native apps. Like Electron but Ruby-flavored."
+    },
+    "lively-electron": {
+      "category": "04-frameworks",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-10-06T06:54:17Z",
+      "remote_updated_at": "2025-10-06T17:47:39Z",
+      "dependencies": [
+        "covered",
+        "lively",
+        "sus"
+      ],
+      "enabled": true,
+      "description": "Connects Lively with Electron framework. Lets you build cross-platform desktop apps. Use when you want to package your web app as a desktop application."
+    },
+    "utopia": {
+      "category": "04-frameworks",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-09-15T20:57:03Z",
+      "remote_updated_at": "2025-09-28T12:41:33Z",
+      "dependencies": [
+        "console",
+        "http-accept",
+        "rack",
+        "traces",
+        "variant",
+        "xrb"
+      ],
+      "enabled": true,
+      "description": "A complete web framework for building websites. Like Rails but built for async from the ground up. Includes routing, templates, and everything you need to build modern websites."
+    },
+    "utopia-falcon-heroku": {
+      "category": "04-frameworks",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2023-07-16T22:39:06Z",
+      "remote_updated_at": "2022-02-26T05:35:34Z",
+      "enabled": true,
+      "description": "Deploy Utopia on Heroku with Falcon. Heroku deployment configuration.",
+      "dependencies": []
+    },
+    "utopia-project": {
+      "category": "04-frameworks",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-09-21T02:53:27Z",
+      "remote_updated_at": "2025-10-04T10:36:47Z",
+      "dependencies": [
+        "decode",
+        "falcon",
+        "rackula",
+        "thread-local",
+        "utopia"
+      ],
+      "enabled": true,
+      "description": "Project template and tools for Utopia framework. Like 'rails new' but for Utopia. Gets you started quickly with a new Utopia project."
+    },
+    "xrb": {
+      "category": "04-frameworks",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-07-02T10:50:49Z",
+      "remote_updated_at": "2025-08-22T11:47:23Z",
+      "dependencies": [],
+      "enabled": true,
+      "description": "A fast, safe HTML templating system. Like ERB but with better security and speed. Automatically escapes dangerous content so hackers can't inject bad code."
+    },
+    "xrb-formatters": {
+      "category": "04-frameworks",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-07-15T07:17:56Z",
+      "remote_updated_at": "2025-07-15T07:17:58Z",
+      "dependencies": [
+        "xrb"
+      ],
+      "enabled": true,
+      "description": "Formatting helpers for XRB templates. Like having a toolbox of useful functions for making pretty output. Format dates, numbers, text, etc."
+    },
+    "xrb-rails": {
+      "category": "04-frameworks",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2024-10-28T00:29:33Z",
+      "remote_updated_at": "2024-10-28T00:29:37Z",
+      "dependencies": [
+        "xrb"
+      ],
+      "enabled": true,
+      "description": "Use XRB templates in Rails apps. Brings the speed and safety of XRB to Rails. Use when you want faster, safer templates in your Rails app."
+    },
+    "xrb-sanitize": {
+      "category": "04-frameworks",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2024-09-03T22:47:44Z",
+      "remote_updated_at": "2025-06-19T19:36:45Z",
+      "dependencies": [
+        "xrb"
+      ],
+      "enabled": true,
+      "description": "Cleans up HTML to remove dangerous content. Like a security guard that inspects HTML and removes weapons. Essential for user-generated content."
+    },
+    "async-pool": {
+      "category": "05-database",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-07-13T23:17:06Z",
+      "remote_updated_at": "2025-07-13T23:17:08Z",
+      "dependencies": [
+        "async"
+      ],
+      "enabled": true,
+      "description": "Manages a pool of reusable resources. Like a tool shed where you check out a tool, use it, and return it. Perfect for database connections, HTTP clients, or any limited resource."
+    },
+    "async-sequel": {
+      "category": "05-database",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2021-07-13T06:51:41Z",
+      "remote_updated_at": "2023-10-12T09:13:10Z",
+      "dependencies": [],
+      "enabled": true,
+      "description": "Use Sequel ORM asynchronously. Async version of popular database library."
+    },
+    "db": {
+      "category": "05-database",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-09-22T11:26:59Z",
+      "remote_updated_at": "2025-09-22T11:27:03Z",
+      "dependencies": [
+        "async-pool"
+      ],
+      "enabled": true,
+      "description": "Database abstraction layer. Like a universal translator for databases. Write code once and it works with PostgreSQL, MariaDB, etc."
+    },
+    "db-active_record": {
+      "category": "05-database",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2024-07-28T04:11:09Z",
+      "remote_updated_at": "2024-12-04T12:34:57Z",
+      "dependencies": [
+        "async-pool",
+        "db"
+      ],
+      "enabled": true,
+      "description": "Connects ActiveRecord (Rails database tool) with the db library. Lets Rails apps use async database connections."
+    },
+    "db-mariadb": {
+      "category": "05-database",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-09-22T11:32:57Z",
+      "remote_updated_at": "2025-09-22T11:32:59Z",
+      "dependencies": [
+        "async-pool",
+        "db"
+      ],
+      "enabled": true,
+      "description": "MariaDB database driver. Talks to MariaDB databases efficiently. Use when your app needs to store data in MariaDB."
+    },
+    "db-migrate": {
+      "category": "05-database",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-09-22T12:47:05Z",
+      "remote_updated_at": "2025-09-22T12:47:08Z",
+      "dependencies": [
+        "db",
+        "migrate"
+      ],
+      "enabled": true,
+      "description": "Database migration tool. Like version control for your database structure. Helps you safely change database tables over time."
+    },
+    "db-model": {
+      "category": "05-database",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2024-09-21T23:05:49Z",
+      "remote_updated_at": "2024-09-21T23:05:51Z",
+      "dependencies": [
+        "db"
+      ],
+      "enabled": true,
+      "description": "Simple database models and ORM. Like ActiveRecord but lighter. Map Ruby classes to database tables."
+    },
+    "db-postgres": {
+      "category": "05-database",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-09-22T11:40:29Z",
+      "remote_updated_at": "2025-09-22T11:40:31Z",
+      "dependencies": [
+        "async-pool",
+        "db"
+      ],
+      "enabled": true,
+      "description": "PostgreSQL database driver. Fast connections to PostgreSQL databases. The go-to choice for serious Ruby apps using PostgreSQL."
+    },
+    "async-redis": {
+      "category": "06-protocols",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-09-21T09:00:01Z",
+      "remote_updated_at": "2025-10-14T20:58:21Z",
+      "dependencies": [
+        "async",
+        "async-pool",
+        "io-endpoint",
+        "io-stream",
+        "protocol-redis"
+      ],
+      "enabled": true,
+      "description": "Talk to Redis asynchronously. Redis is a super-fast data store. Use this for caching, session storage, or job queues without blocking."
+    },
+    "protocol-redis": {
+      "category": "06-protocols",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-09-21T09:08:01Z",
+      "remote_updated_at": "2025-09-21T09:08:04Z",
+      "dependencies": [],
+      "enabled": true,
+      "description": "Low-level Redis protocol implementation. The engine under async-redis. You probably want async-redis unless building something custom."
+    },
+    "console": {
+      "category": "07-console",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-10-12T23:51:43Z",
+      "remote_updated_at": "2025-10-13T20:31:54Z",
+      "dependencies": [
+        "fiber-local"
+      ],
+      "enabled": true,
+      "description": "Beautiful, structured logging for Ruby. Like a fancy journal for your program. Shows what's happening with colors, structure, and context. Essential for debugging production apps."
+    },
+    "console-adapter-rails": {
+      "category": "07-console",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2024-08-09T04:40:26Z",
+      "remote_updated_at": "2025-06-19T19:36:54Z",
+      "dependencies": [
+        "console"
+      ],
+      "enabled": true,
+      "description": "Connects Console logging with Rails. Makes Rails logs prettier and more useful. Use in Rails apps for better logging."
+    },
+    "console-adapter-sidekiq": {
+      "category": "07-console",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2023-08-07T05:23:24Z",
+      "remote_updated_at": "2023-10-05T14:18:07Z",
+      "dependencies": [
+        "console"
+      ],
+      "enabled": true,
+      "description": "Connects Console with Sidekiq (job processor). Better logging for your background jobs."
+    },
+    "console-output-datadog": {
+      "category": "07-console",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-08-04T01:36:27Z",
+      "remote_updated_at": "2025-08-04T01:36:30Z",
+      "dependencies": [
+        "console"
+      ],
+      "enabled": true,
+      "description": "Sends Console logs to Datadog monitoring service. Like having a security camera that records all your logs to the cloud."
+    },
+    "async-rspec": {
+      "category": "08-testing",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-03-04T21:02:45Z",
+      "remote_updated_at": "2025-03-04T21:02:48Z",
+      "dependencies": [
+        "async",
+        "covered",
+        "rspec-files",
+        "rspec-memory"
+      ],
+      "enabled": true,
+      "description": "Run RSpec tests asynchronously. Makes your test suite faster by running tests in parallel. Use for projects with lots of tests."
+    },
+    "bake-test-types": {
+      "category": "08-testing",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-07-20T00:35:42Z",
+      "remote_updated_at": "2025-07-20T00:35:44Z",
+      "dependencies": [],
+      "enabled": true,
+      "description": "Type checking for Bake tasks. Add type safety to build scripts."
+    },
+    "benchmark-http": {
+      "category": "08-testing",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2024-11-18T00:07:15Z",
+      "remote_updated_at": "2025-07-25T17:58:01Z",
+      "dependencies": [
+        "async-await",
+        "async-http",
+        "console",
+        "xrb-sanitize"
+      ],
+      "enabled": true,
+      "description": "HTTP server benchmarking tool. Compare performance of different servers."
+    },
+    "covered": {
+      "category": "08-testing",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-09-09T07:38:16Z",
+      "remote_updated_at": "2025-09-09T07:38:18Z",
+      "dependencies": [
+        "console"
+      ],
+      "enabled": true,
+      "description": "Code coverage tool. Shows which parts of your code are tested and which aren't. Like highlighting your code to see what tests touch. Helps you write better tests."
+    },
+    "sus": {
+      "category": "08-testing",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-08-27T02:35:00Z",
+      "remote_updated_at": "2025-09-11T08:58:29Z",
+      "dependencies": [],
+      "enabled": true,
+      "description": "A modern testing framework. Like RSpec or Minitest but built for async code. Simple, fast, and designed for socketry libraries."
+    },
+    "sus-fixtures-agent-context": {
+      "category": "08-testing",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-07-30T03:45:35Z",
+      "remote_updated_at": "2025-07-30T03:45:37Z",
+      "dependencies": [
+        "async-ollama",
+        "sus"
+      ],
+      "enabled": true,
+      "description": "Test fixtures for agent contexts. Testing helper for specific use cases."
+    },
+    "sus-fixtures-async": {
+      "category": "08-testing",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2024-08-18T23:54:15Z",
+      "remote_updated_at": "2024-08-18T23:54:17Z",
+      "dependencies": [
+        "async",
+        "sus"
+      ],
+      "enabled": true,
+      "description": "Test helpers for async code in Sus. Makes testing async behavior easier. Use when writing Sus tests for async code."
+    },
+    "sus-fixtures-async-http": {
+      "category": "08-testing",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-08-19T05:01:42Z",
+      "remote_updated_at": "2025-08-19T05:01:44Z",
+      "dependencies": [
+        "async-http",
+        "sus",
+        "sus-fixtures-async"
+      ],
+      "enabled": true,
+      "description": "Test helpers for HTTP code in Sus. Mock servers, test HTTP interactions. Essential for testing HTTP clients."
+    },
+    "sus-fixtures-async-webdriver": {
+      "category": "08-testing",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-09-23T00:25:22Z",
+      "remote_updated_at": "2025-09-23T00:25:25Z",
+      "dependencies": [
+        "async-webdriver"
+      ],
+      "enabled": true,
+      "description": "Test fixtures for browser automation. Helper for webdriver tests."
+    },
+    "sus-fixtures-benchmark": {
+      "category": "08-testing",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-08-03T20:37:47Z",
+      "remote_updated_at": "2025-08-03T20:37:49Z",
+      "dependencies": [
+        "sus"
+      ],
+      "enabled": true,
+      "description": "Test fixtures for benchmarks. Standardized performance testing."
+    },
+    "sus-fixtures-console": {
+      "category": "08-testing",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-08-19T04:04:25Z",
+      "remote_updated_at": "2025-08-19T04:04:27Z",
+      "dependencies": [
+        "console",
+        "sus"
+      ],
+      "enabled": true,
+      "description": "Test helpers for Console logging in Sus. Verify your logs in tests."
+    },
+    "sus-fixtures-openssl": {
+      "category": "08-testing",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2024-04-22T09:25:27Z",
+      "remote_updated_at": "2025-06-19T19:36:47Z",
+      "dependencies": [
+        "sus"
+      ],
+      "enabled": true,
+      "description": "Test fixtures for SSL/TLS. Mock certificates and SSL contexts."
+    },
+    "sus-fixtures-time": {
+      "category": "08-testing",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2024-07-23T06:30:57Z",
+      "remote_updated_at": "2024-07-23T06:30:58Z",
+      "dependencies": [
+        "sus"
+      ],
+      "enabled": true,
+      "description": "Test fixtures for time manipulation. Control time in tests."
+    },
+    "sus-vscode": {
+      "category": "08-testing",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2024-07-22T11:51:57Z",
+      "remote_updated_at": "2024-10-30T16:45:49Z",
+      "enabled": true,
+      "description": "VSCode extension for Sus testing. Run tests from your editor.",
+      "dependencies": []
+    },
+    "io-endpoint": {
+      "category": "09-io-libraries",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-02-20T07:02:29Z",
+      "remote_updated_at": "2025-08-17T20:16:53Z",
+      "dependencies": [],
+      "enabled": true,
+      "description": "Abstracts different I/O sources (files, sockets, etc.). Like a universal remote for different types of I/O. Low-level foundation for other libraries."
+    },
+    "io-event": {
+      "category": "09-io-libraries",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-09-05T23:01:16Z",
+      "remote_updated_at": "2025-09-28T00:14:16Z",
+      "dependencies": [],
+      "enabled": true,
+      "description": "Event loop for async I/O. The heart that pumps blood through the async system. Low-level; usually used automatically by async."
+    },
+    "io-memory": {
+      "category": "09-io-libraries",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-06-04T07:24:08Z",
+      "remote_updated_at": "2025-07-01T14:26:20Z",
+      "dependencies": [],
+      "enabled": true,
+      "description": "In-memory I/O buffers. Like temporary notepads in RAM. Useful for testing or temporary storage."
+    },
+    "io-stream": {
+      "category": "09-io-libraries",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-07-01T08:19:47Z",
+      "remote_updated_at": "2025-08-05T00:56:56Z",
+      "dependencies": [],
+      "enabled": true,
+      "description": "Stream handling for I/O. Read and write data in chunks. Like reading a book page by page instead of all at once."
+    },
+    "io-watch": {
+      "category": "09-io-libraries",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2024-08-12T01:43:45Z",
+      "remote_updated_at": "2025-02-09T12:49:07Z",
+      "dependencies": [],
+      "enabled": true,
+      "description": "Watch files and directories for changes. Like a guard dog that barks when files change. Perfect for auto-reloading code during development."
+    },
+    "localhost": {
+      "category": "09-io-libraries",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-08-02T02:19:24Z",
+      "remote_updated_at": "2025-10-14T19:16:31Z",
+      "dependencies": [],
+      "enabled": true,
+      "description": "Manages SSL certificates for localhost development. Makes HTTPS work on your computer during development. No more browser warnings!"
+    },
+    "decode": {
+      "category": "10-dev-tools",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-08-13T06:18:04Z",
+      "remote_updated_at": "2025-08-13T06:18:07Z",
+      "dependencies": [],
+      "enabled": true,
+      "description": "Decodes various data formats. Like a universal translator for data. Handles JSON, YAML, MessagePack, etc."
+    },
+    "katacoda": {
+      "category": "10-dev-tools",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2019-04-19T11:49:47Z",
+      "remote_updated_at": "2019-05-17T21:41:19Z",
+      "enabled": true,
+      "description": "Katacoda tutorials (deprecated). Old educational content.",
+      "dependencies": []
+    },
+    "performance": {
+      "category": "10-dev-tools",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-07-15T12:30:38Z",
+      "remote_updated_at": "2025-10-12T10:52:35Z",
+      "enabled": true,
+      "description": "Performance monitoring and profiling tools. Like a fitness tracker for your code. Measures speed and finds bottlenecks.",
+      "dependencies": []
+    },
+    "rspec-files": {
+      "category": "10-dev-tools",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2022-10-13T09:46:16Z",
+      "remote_updated_at": "2022-10-13T09:43:21Z",
+      "dependencies": [
+        "covered"
+      ],
+      "enabled": true,
+      "description": "RSpec matchers for file operations. Test file I/O in RSpec."
+    },
+    "rspec-memory": {
+      "category": "10-dev-tools",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2024-09-03T22:25:06Z",
+      "remote_updated_at": "2024-06-29T19:20:42Z",
+      "dependencies": [
+        "covered"
+      ],
+      "enabled": true,
+      "description": "RSpec matchers for memory checks. Test memory usage in RSpec."
+    },
+    "rubocop-socketry": {
+      "category": "10-dev-tools",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-09-05T10:31:04Z",
+      "remote_updated_at": "2025-09-05T10:31:06Z",
+      "dependencies": [],
+      "enabled": true,
+      "description": "Code style checker for socketry projects. Like a grammar checker for Ruby code. Keeps code consistent."
+    },
+    "xrb-vscode": {
+      "category": "10-dev-tools",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2024-04-28T09:20:48Z",
+      "remote_updated_at": "2025-08-17T20:16:52Z",
+      "enabled": true,
+      "description": "VSCode extension for XRB templates. Syntax highlighting and tools.",
+      "dependencies": []
+    },
+    "cloudflare": {
+      "category": "11-security",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-01-22T00:17:53Z",
+      "remote_updated_at": "2025-10-12T09:11:53Z",
+      "dependencies": [
+        "async-rest"
+      ],
+      "enabled": true,
+      "description": "Cloudflare API client. Talk to Cloudflare's CDN and security services. Manage DNS, SSL, firewall rules programmatically."
+    },
+    "cloudflare-dns-update": {
+      "category": "11-security",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2024-11-17T07:49:38Z",
+      "remote_updated_at": "2025-10-06T08:58:56Z",
+      "dependencies": [
+        "cloudflare"
+      ],
+      "enabled": true,
+      "description": "Updates Cloudflare DNS records automatically. Like a robot that updates your domain settings. Perfect for dynamic DNS."
+    },
+    "variant": {
+      "category": "11-security",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2020-09-28T09:13:35Z",
+      "remote_updated_at": "2025-07-05T21:10:45Z",
+      "dependencies": [
+        "covered",
+        "thread-local"
+      ],
+      "enabled": true,
+      "description": "Type checking and validation. Makes sure data has the right shape. Like TSA security checking that everything is correct."
+    },
+    "cool.io": {
+      "category": "12-low-level",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2024-10-02T09:13:50Z",
+      "remote_updated_at": "2025-08-07T20:09:45Z",
+      "dependencies": [],
+      "enabled": true,
+      "description": "Event loop library. Alternative to io-event. Older, consider io-event instead."
+    },
+    "fiber-local": {
+      "category": "12-low-level",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2024-05-02T23:41:57Z",
+      "remote_updated_at": "2025-08-17T20:16:52Z",
+      "dependencies": [],
+      "enabled": true,
+      "description": "Fiber-local storage (like thread-local but for fibers). Each fiber gets its own variables. Like giving each async task its own locker."
+    },
+    "fiber-profiler": {
+      "category": "12-low-level",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-07-28T13:53:05Z",
+      "remote_updated_at": "2025-09-29T06:24:52Z",
+      "dependencies": [],
+      "enabled": true,
+      "description": "Profile fiber performance. Find out which fibers are slow. Like a stopwatch for each async task."
+    },
+    "lightio": {
+      "category": "12-low-level",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2021-06-09T07:11:48Z",
+      "remote_updated_at": "2024-12-17T08:02:58Z",
+      "dependencies": [],
+      "enabled": true,
+      "description": "Lightweight I/O library. Another async approach. Experimental."
+    },
+    "nio4r": {
+      "category": "12-low-level",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2024-11-27T21:09:59Z",
+      "remote_updated_at": "2025-09-17T20:40:06Z",
+      "dependencies": [],
+      "enabled": true,
+      "description": "Ruby wrapper for libev/libuv. Low-level async I/O. Foundation for other libraries."
+    },
+    "thread-local": {
+      "category": "12-low-level",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2024-09-03T22:25:47Z",
+      "remote_updated_at": "2024-04-17T07:34:28Z",
+      "dependencies": [
+        "covered"
+      ],
+      "enabled": true,
+      "description": "Thread-local storage utilities. Variables unique per thread."
+    },
+    "timers": {
+      "category": "12-low-level",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-02-07T21:39:14Z",
+      "remote_updated_at": "2025-09-17T20:40:56Z",
+      "dependencies": [],
+      "enabled": true,
+      "description": "Timer management for async code. Schedule things to happen later."
+    },
+    "community": {
+      "category": "13-utilities",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-03-15T21:23:09Z",
+      "remote_updated_at": "2025-03-15T21:23:13Z",
+      "enabled": true,
+      "description": "Community resources and guidelines. Not code - community docs.",
+      "dependencies": []
+    },
+    "data": {
+      "category": "13-utilities",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2020-09-05T04:40:57Z",
+      "remote_updated_at": "2020-09-05T04:40:55Z",
+      "enabled": true,
+      "description": "Data structure utilities. Helpers for working with data.",
+      "dependencies": []
+    },
+    "logos": {
+      "category": "13-utilities",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2017-03-26T23:58:19Z",
+      "remote_updated_at": "2017-03-26T22:36:19Z",
+      "enabled": true,
+      "description": "Socketry organization logos and branding. Graphics, not code.",
+      "dependencies": []
+    },
+    "memory": {
+      "category": "13-utilities",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2024-06-27T06:45:07Z",
+      "remote_updated_at": "2024-09-19T18:14:27Z",
+      "dependencies": [
+        "console"
+      ],
+      "enabled": true,
+      "description": "Memory profiling and leak detection. Find out why your app uses too much RAM. Like a detective for memory issues."
+    },
+    "memory-leak": {
+      "category": "13-utilities",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-10-15T06:30:12Z",
+      "remote_updated_at": "2025-10-15T11:06:05Z",
+      "dependencies": [],
+      "enabled": true,
+      "description": "Demo of memory leak patterns. Educational tool showing common memory problems."
+    },
+    "metrics": {
+      "category": "13-utilities",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-09-10T07:23:49Z",
+      "remote_updated_at": "2025-09-10T07:23:52Z",
+      "dependencies": [],
+      "enabled": true,
+      "description": "Application metrics and monitoring. Count things, measure times, track trends. Like the dashboard in your car showing speed and fuel."
+    },
+    "metrics-backend-datadog": {
+      "category": "13-utilities",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-03-07T05:32:24Z",
+      "remote_updated_at": "2025-03-07T05:32:26Z",
+      "dependencies": [
+        "metrics"
+      ],
+      "enabled": true,
+      "description": "Send metrics to Datadog. Datadog is a monitoring service. Use for production monitoring."
+    },
+    "metrics-backend-statsd": {
+      "category": "13-utilities",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-03-07T06:50:00Z",
+      "remote_updated_at": "2025-03-07T15:24:22Z",
+      "dependencies": [
+        "metrics"
+      ],
+      "enabled": true,
+      "description": "Send metrics to StatsD. StatsD is a metrics aggregator. Another option for production metrics."
+    },
+    "multipart-post": {
+      "category": "13-utilities",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2024-09-03T22:18:14Z",
+      "remote_updated_at": "2025-09-28T12:40:09Z",
+      "dependencies": [],
+      "enabled": true,
+      "description": "HTTP multipart form encoding. Upload files via HTTP. Standard way to send files to web servers."
+    },
+    "process-metrics": {
+      "category": "13-utilities",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-10-11T11:20:09Z",
+      "remote_updated_at": "2025-10-11T11:20:12Z",
+      "dependencies": [
+        "console"
+      ],
+      "enabled": true,
+      "description": "Metrics about the Ruby process itself. CPU, memory, GC stats. Monitor your app's health."
+    },
+    "process-terminal": {
+      "category": "13-utilities",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2020-01-09T00:31:37Z",
+      "remote_updated_at": "2021-10-19T18:51:24Z",
+      "dependencies": [
+        "covered"
+      ],
+      "enabled": true,
+      "description": "Terminal/PTY handling for processes. Run programs in fake terminals."
+    },
+    "qrcode": {
+      "category": "13-utilities",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-09-27T04:04:31Z",
+      "remote_updated_at": "2025-10-10T13:24:56Z",
+      "dependencies": [],
+      "enabled": true,
+      "description": "Generate QR codes. Those square barcodes you scan with your phone. Use for tickets, authentication, sharing links."
+    },
+    "string-format": {
+      "category": "13-utilities",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-08-31T22:46:50Z",
+      "remote_updated_at": "2025-09-28T12:38:55Z",
+      "dependencies": [],
+      "enabled": true,
+      "description": "Advanced string formatting. Like printf on steroids. Format text with patterns."
+    },
+    "traces": {
+      "category": "13-utilities",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-09-10T04:05:45Z",
+      "remote_updated_at": "2025-10-09T16:16:47Z",
+      "dependencies": [],
+      "enabled": true,
+      "description": "Distributed tracing for requests. Follow a request through your entire system. Like GPS tracking for requests through microservices."
+    },
+    "traces-backend-datadog": {
+      "category": "13-utilities",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-08-15T10:05:43Z",
+      "remote_updated_at": "2025-08-26T05:32:33Z",
+      "dependencies": [
+        "traces"
+      ],
+      "enabled": true,
+      "description": "Send traces to Datadog APM. Application Performance Monitoring."
+    },
+    "traces-backend-open_telemetry": {
+      "category": "13-utilities",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-08-27T03:21:47Z",
+      "remote_updated_at": "2025-08-27T03:21:50Z",
+      "dependencies": [
+        "traces"
+      ],
+      "enabled": true,
+      "description": "Send traces using OpenTelemetry standard. The new industry standard for observability."
+    },
+    "types": {
+      "category": "13-utilities",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-07-18T03:58:24Z",
+      "remote_updated_at": "2025-07-18T03:58:26Z",
+      "dependencies": [],
+      "enabled": true,
+      "description": "Type definitions for Ruby. Like TypeScript for Ruby. Add type hints to catch bugs early."
+    },
+    "action-cable-next-playground": {
+      "category": "99-miscellaneous",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2024-09-14T05:21:17Z",
+      "remote_updated_at": "2024-09-30T16:06:27Z",
+      "enabled": true,
+      "description": "Experimental ActionCable improvements. Testing ground for new ideas.",
+      "dependencies": []
+    },
+    "async-await": {
+      "category": "99-miscellaneous",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-04-09T21:42:02Z",
+      "remote_updated_at": "2025-10-10T11:57:33Z",
+      "dependencies": [
+        "async"
+      ],
+      "enabled": true,
+      "description": "Experimental async/await syntax for Ruby. Like JavaScript's async/await. Makes async code look synchronous."
+    },
+    "async-cable": {
+      "category": "99-miscellaneous",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-08-02T23:49:50Z",
+      "remote_updated_at": "2025-10-10T05:39:34Z",
+      "dependencies": [
+        "async",
+        "async-websocket"
+      ],
+      "enabled": true,
+      "description": "ActionCable implementation using async. Real-time features for Rails using WebSockets. Better performance than standard ActionCable."
+    },
+    "async-container-supervisor": {
+      "category": "99-miscellaneous",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-10-15T04:10:38Z",
+      "remote_updated_at": "2025-10-15T04:10:40Z",
+      "dependencies": [
+        "async-service",
+        "io-endpoint",
+        "memory-leak"
+      ],
+      "enabled": true,
+      "description": "Supervises containers and restarts them if they crash. Like a lifeguard for your async processes."
+    },
+    "async-discord": {
+      "category": "99-miscellaneous",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-01-28T04:52:30Z",
+      "remote_updated_at": "2025-03-13T19:53:35Z",
+      "dependencies": [
+        "async-rest",
+        "async-websocket"
+      ],
+      "enabled": true,
+      "description": "Discord bot framework using async. Build Discord bots that can handle many users. Create chat bots for Discord servers."
+    },
+    "async-examples": {
+      "category": "99-miscellaneous",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-07-30T11:12:19Z",
+      "remote_updated_at": "2025-07-28T00:51:50Z",
+      "enabled": true,
+      "description": "Example code showing how to use async. Learning resource with working examples.",
+      "dependencies": []
+    },
+    "async-job": {
+      "category": "99-miscellaneous",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-09-21T12:37:30Z",
+      "remote_updated_at": "2025-10-13T09:51:45Z",
+      "dependencies": [
+        "async",
+        "string-format"
+      ],
+      "enabled": true,
+      "description": "Background job processing system. Like Sidekiq but async. Process jobs in the background without blocking."
+    },
+    "async-job-adapter-active_job": {
+      "category": "99-miscellaneous",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-10-15T11:56:36Z",
+      "remote_updated_at": "2025-10-15T11:56:41Z",
+      "dependencies": [
+        "async-job",
+        "async-service"
+      ],
+      "enabled": true,
+      "description": "Use async-job with Rails ActiveJob. Makes Rails background jobs faster."
+    },
+    "async-job-processor-redis": {
+      "category": "99-miscellaneous",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-09-21T12:44:56Z",
+      "remote_updated_at": "2025-10-05T00:48:04Z",
+      "dependencies": [
+        "async-job",
+        "async-redis"
+      ],
+      "enabled": true,
+      "description": "Process async-job jobs from Redis. Redis stores the job queue."
+    },
+    "async-job-rails-example": {
+      "category": "99-miscellaneous",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-08-02T02:39:19Z",
+      "remote_updated_at": "2025-08-02T02:39:22Z",
+      "enabled": true,
+      "description": "",
+      "dependencies": []
+    },
+    "async-ollama": {
+      "category": "99-miscellaneous",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-07-27T12:06:38Z",
+      "remote_updated_at": "2025-08-10T20:21:55Z",
+      "dependencies": [
+        "async",
+        "async-rest"
+      ],
+      "enabled": true,
+      "description": "Client for Ollama (local AI/LLM server). Talk to local language models asynchronously. Build AI-powered features without cloud APIs."
+    },
+    "async-safe": {
+      "category": "99-miscellaneous",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-10-06T08:41:15Z",
+      "remote_updated_at": "2025-10-06T08:41:18Z",
+      "dependencies": [],
+      "enabled": true,
+      "description": "Thread-safe async operations. Ensures safety when using async with threads."
+    },
+    "async-slack": {
+      "category": "99-miscellaneous",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2020-01-08T14:57:03Z",
+      "remote_updated_at": "2025-03-13T19:54:06Z",
+      "dependencies": [
+        "async-rest",
+        "async-rspec",
+        "async-websocket",
+        "covered"
+      ],
+      "enabled": true,
+      "description": "Slack bot framework using async. Build Slack bots. Automate Slack workflows."
+    },
+    "async-webdriver": {
+      "category": "99-miscellaneous",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2025-09-23T09:19:52Z",
+      "remote_updated_at": "2025-09-23T09:19:54Z",
+      "dependencies": [
+        "async-actor",
+        "async-http",
+        "async-pool",
+        "async-websocket"
+      ],
+      "enabled": true,
+      "description": "Control web browsers asynchronously for testing. Like Selenium but async. Automate browser testing."
+    },
+    "fiber_basic_benchmarks": {
+      "category": "99-miscellaneous",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2019-12-20T21:20:13Z",
+      "remote_updated_at": "2019-12-20T21:20:15Z",
+      "enabled": true,
+      "description": "Basic fiber performance tests. Educational/research code.",
+      "dependencies": []
+    },
+    "flappy-bird": {
+      "category": "99-miscellaneous",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2024-09-25T22:39:02Z",
+      "remote_updated_at": "2025-09-29T01:20:24Z",
+      "enabled": true,
+      "description": "Flappy bird game implementation. Demo/fun project. Shows what you can build with these tools!",
+      "dependencies": []
+    },
+    "guard-falcon": {
+      "category": "99-miscellaneous",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2024-06-26T02:13:39Z",
+      "remote_updated_at": "2024-06-26T02:13:41Z",
+      "dependencies": [
+        "console",
+        "falcon"
+      ],
+      "enabled": true,
+      "description": "Guard plugin for Falcon. Auto-restart Falcon when files change during development."
+    },
+    "migrate": {
+      "category": "99-miscellaneous",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2021-06-02T00:32:26Z",
+      "remote_updated_at": "2021-07-13T14:46:36Z",
+      "dependencies": [],
+      "enabled": true,
+      "description": "Database migration tool (older). Consider db-migrate instead for new projects."
+    },
+    "rackula": {
+      "category": "99-miscellaneous",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2024-09-03T22:47:09Z",
+      "remote_updated_at": "2025-10-14T17:59:13Z",
+      "dependencies": [
+        "falcon",
+        "variant"
+      ],
+      "enabled": true,
+      "description": "Static site generator from Rack apps. Turn dynamic sites into static HTML."
+    },
+    "rails-falcon-heroku": {
+      "category": "99-miscellaneous",
+      "last_pull_at": "2025-10-15T14:32:52+02:00",
+      "remote_pushed_at": "2021-08-25T01:55:25Z",
+      "remote_updated_at": "2024-05-16T15:09:52Z",
+      "enabled": true,
+      "description": "Deploy Rails on Heroku with Falcon. Heroku configuration.",
+      "dependencies": []
+    },
+    ".github": {
+      "last_pull_at": null,
+      "remote_pushed_at": "2023-06-26T01:18:01Z",
+      "remote_updated_at": "2021-12-14T07:30:30Z"
+    },
+    "utopia-wiki": {
+      "last_pull_at": null,
+      "remote_pushed_at": "2023-01-18T19:44:24Z",
+      "remote_updated_at": "2020-07-31T20:48:06Z",
+      "category": "04-frameworks",
+      "enabled": true,
+      "description": "",
+      "dependencies": [
+        "async-rspec",
+        "covered",
+        "falcon",
+        "rackula",
+        "utopia"
+      ]
+    },
+    "longhorn-0.1.0": {
+      "dependencies": []
+    }
+  }
+}
