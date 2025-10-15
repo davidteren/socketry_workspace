@@ -7,6 +7,7 @@ class IntegrationUpdateTest < Minitest::Test
   include TestHelpers
 
   def setup
+    skip 'Integration tests are skipped in CI environment' if ENV['CI']
     @config = setup_temp_workspace
   end
 

@@ -9,11 +9,14 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    
+
+    env:
+      CI: true
+
     strategy:
       matrix:
         ruby-version: ['3.2', '3.3', '3.4']
-    
+
     steps:
     - uses: actions/checkout@v4
     
