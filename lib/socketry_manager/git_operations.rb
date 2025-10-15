@@ -38,6 +38,8 @@ module SocketryManager
 
     def find_all_repos
       category_dirs = Dir.glob(File.join(@config.base_dir, '[0-9]*'))
+      unsorted_dir = File.join(@config.base_dir, 'unsorted')
+      category_dirs << unsorted_dir if Dir.exist?(unsorted_dir)
       repos = []
 
       category_dirs.each do |category_dir|

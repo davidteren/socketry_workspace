@@ -26,6 +26,11 @@ Socketry is a collection of modern, high-performance Ruby libraries focused on a
 
 ### Prerequisites
 
+- Ruby 3.1+ (recommended)
+- git installed and available on PATH
+- Optional: GitHub token for higher API rate limits
+  - Set `GITHUB_TOKEN` or `GH_TOKEN` in your environment
+
 ```bash
 bundle install
 ```
