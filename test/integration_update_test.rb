@@ -32,7 +32,7 @@ class IntegrationUpdateTest < Minitest::Test
   def init_working_repo(path)
     FileUtils.mkdir_p(path)
     # git init -b main may not be available on all systems; try it first
-    out, err, status = Open3.capture3('git', 'init', '-b', 'main', path)
+    _, _, status = Open3.capture3('git', 'init', '-b', 'main', path)
     unless status.success?
       # Fallback to default branch then create main
       run_cmd('git', 'init', path)
@@ -111,10 +111,12 @@ class IntegrationUpdateTest < Minitest::Test
       # Verify local HEAD matches remote after update
       local_a = run_cmd('git', 'rev-parse', '@', chdir: clone_a).strip
       remote_a_head = run_cmd('git', 'rev-parse', '@{u}', chdir: clone_a).strip
+
       assert_equal remote_a_head, local_a
 
       local_b = run_cmd('git', 'rev-parse', '@', chdir: clone_b).strip
       remote_b_head = run_cmd('git', 'rev-parse', '@{u}', chdir: clone_b).strip
+
       assert_equal remote_b_head, local_b
     ensure
       FileUtils.rm_rf(tmp) if tmp && File.exist?(tmp)

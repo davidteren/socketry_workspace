@@ -12,8 +12,6 @@ module SocketryManager
       JSON.parse(File.read(@config.workspace_metadata_file))
     end
 
-
-
     def save(data)
       File.write(@config.workspace_metadata_file, JSON.pretty_generate(data))
     end
