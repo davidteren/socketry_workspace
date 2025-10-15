@@ -2,6 +2,25 @@
 
 This directory contains organized clones of repositories from the [Socketry GitHub Organization](https://github.com/socketry), created and maintained by Samuel Williams.
 
+## About This Project
+
+**This is an unofficial community tool** created to help developers explore and understand the Socketry organization's extensive library ecosystem. It is **not an official Socketry project**.
+
+### What It Does
+
+This tool provides:
+- **Visual Explorer**: A web-based catalog of Socketry repositories with metadata, categorization, and easy navigation
+- **Local Workspace**: Organized clones of repositories grouped by category for detailed examination
+- **Metadata Management**: Automated tracking of dependencies, descriptions, and repository information
+
+### How to Use It
+
+1. **Browse Online**: Visit the [Socketry Libraries Explorer](https://davidteren.github.io/socketry_workspace/) to explore available libraries
+2. **Clone Locally**: Use this tool to clone and organize repositories on your machine for detailed code examination
+3. **Explore Source**: View the source code for this explorer tool at [github.com/davidteren/socketry_workspace](https://github.com/davidteren/socketry_workspace)
+
+This tool makes it easier to discover what libraries are available in the Socketry ecosystem and understand what each one does, helping you find the right tools for your asynchronous Ruby projects.
+
 ## Overview
 
 Socketry is a collection of modern, high-performance Ruby libraries focused on asynchronous I/O, networking, and web development. The repositories are organized into logical categories for easy navigation and understanding.
