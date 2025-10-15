@@ -1,0 +1,14 @@
+# Ignore all cloned repository directories
+[0-9][0-9]-*/
+99-*/
+
+# Ignore the unsorted directory
+unsorted/
+
+# Ignore the tracking file (will be regenerated)
+.repo_list.json
+
+# Keep only the scripts and documentation
+!*.sh
+!*.md
+!.gitignore
