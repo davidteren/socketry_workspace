@@ -405,8 +405,8 @@
     async function loadData() {
         try {
             const [metadataResponse, categoriesResponse] = await Promise.all([
-                fetch('./workspace_metadata.json'),
-                fetch('./categories.json')
+                fetch('../.workspace_metadata.json'),
+                fetch('../categories.json')
             ]);
 
             if (!metadataResponse.ok || !categoriesResponse.ok) {
