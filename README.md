@@ -1,6 +1,7 @@
 # Socketry Organization Repositories
 
-This directory contains organized clones of repositories from the [Socketry GitHub Organization](https://github.com/socketry), created and maintained by Samuel Williams.
+This repo contains tools to pull organized clones of repositories from the [Socketry GitHub Organization](https://github.com/socketry), created and maintained by Samuel Williams.
+There is also a [Socketry Libraries Explorer](https://davidteren.github.io/socketry_workspace/).
 
 ## About This Project
 
